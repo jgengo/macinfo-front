@@ -1,18 +1,18 @@
 <template>
   <div class="home">
-    <AddReportForm />
-    Hello!!
+    <v-row>
+      <ReportsTable />
+    </v-row>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import AddReportForm from '@/components/AddReportForm.vue';
+import ReportsTable from '@/components/ReportsTable.vue';
 
 export default {
   name: 'Home',
   components: {
-    AddReportForm,
+    ReportsTable,
   },
 };
 </script>

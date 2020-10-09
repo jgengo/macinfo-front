@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app id="app">
 
     <v-app-bar id="nav" app dense color="#FFF">
       <div class="d-flex align-center">
@@ -15,10 +15,18 @@
     </v-app-bar>
 
     <v-main class="mt-5">
-      <router-view></router-view>
+      <v-container>
+        <router-view></router-view>
+      </v-container>
     </v-main>
   </v-app>
 </template>
+
+<style>
+#app {
+  font-family: 'Quicksand', sans-serif;
+}
+</style>
 
 <script>
 export default {
