@@ -1,45 +1,39 @@
 <template>
-    <v-col cols="12" sm="12" md="12">
-      <v-card flat>
-    <v-card-title>
-      Reports
-      <v-spacer></v-spacer>
-      <v-text-field
-        v-model="search"
-        append-icon="mdi-magnify"
-        label="Search"
-        single-line
-        hide-details
-      ></v-text-field>
-      <v-spacer></v-spacer>
+  <v-col cols="12" sm="12" md="12">
+    <v-card flat>
+      <v-card-title>
+        <div class="d-none d-md-flex">Reports</div>
+        <v-spacer class="d-none d-md-flex"></v-spacer>
+        <v-text-field
+          v-model="search"
+          append-icon="mdi-magnify"
+          label="Search"
+          single-line
+          hide-details
+          class="mb-3"
+        ></v-text-field>
+        <v-spacer></v-spacer>
 
-        <v-dialog
-          v-model="dialog"
-          max-width="500px"
-        >
+        <v-dialog v-model="dialog" max-width="500px">
           <template v-slot:activator="{ on, attrs }">
-            <v-btn
-              color="primary"
-              dark
-              v-bind="attrs"
-              v-on="on"
-            ><v-icon left>mdi-plus-thick</v-icon>
+            <v-btn color="primary" dark v-bind="attrs" v-on="on">
+              <v-icon left>mdi-plus-thick</v-icon>
               new report
             </v-btn>
           </template>
           <AddReportForm />
         </v-dialog>
 
-    </v-card-title>
-        <v-data-table
+      </v-card-title>
+      <v-data-table
         filterable
         :headers="headers"
         :items="reports"
         :search="search"
         class='elevation-1'
-        ></v-data-table>
-        </v-card>
-    </v-col>
+      ></v-data-table>
+    </v-card>
+  </v-col>
 </template>
 
 
