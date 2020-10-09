@@ -16,7 +16,13 @@
 
         <v-dialog v-model="dialog" max-width="500px">
           <template v-slot:activator="{ on, attrs }">
-            <v-btn color="primary" dark v-bind="attrs" v-on="on">
+            <v-btn
+              color="primary"
+              dark
+              v-bind="attrs"
+              v-on="on"
+              class="elevation-2"
+            >
               <v-icon left>mdi-plus-thick</v-icon>
               new report
             </v-btn>
@@ -30,7 +36,7 @@
         :headers="headers"
         :items="reports"
         :search="search"
-        class='elevation-1'
+        class='elevation-5'
       ></v-data-table>
     </v-card>
   </v-col>
